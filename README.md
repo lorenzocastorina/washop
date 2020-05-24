@@ -40,6 +40,8 @@ ng serve
 
 Una volta fatto il progetto partirà e sarà possibile visualizzarlo all'indirizzo [localhost:8080](http://localhost:8080/)
 
+**ricorda di entrare in modalità web-development tramite gli strumenti sviluppatore del browser**
+
 
 potrebbe essere possibile dover utilizzare tale comando in caso di errore:
 
