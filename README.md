@@ -5,20 +5,20 @@ L'applicazione si presenta come utile esperimento per testare le potenzialità d
 
 # come funziona
 
-![alt text](https://github.com/lorenzocastorina/washop/blob/master/screenshots/home.png?raw=true)
-
 L'applicazione funzionalmente si utilizza come un semplicissimo catalogo di oggetti disponibili per il ritiro, si può scegliere
 la quantità di tali oggetti e visualizzarne il prezzo per singolo elemento.
 
-![alt text](https://github.com/lorenzocastorina/washop/blob/master/screenshots/login.png?raw=true)
+![alt text](https://github.com/lorenzocastorina/washop/blob/master/screenshots/home.png?raw=true)
 
 Per poter effettuare operazioni di prenotazione o aggiunta al carrello è necessario la registrazione o il login da parte 
 dell'utente (rendendo cosi possibile ad un utente novizio visualizzare l'app come guest)
 
-![alt text](https://github.com/lorenzocastorina/washop/blob/master/screenshots/white.png?raw=true)
+![alt text](https://github.com/lorenzocastorina/washop/blob/master/screenshots/login.png?raw=true)
 
 Nell'applicazione è presente anche uno switch per la dark mode in modo automatico, disponibile sia per andorid che ios, basandosi
 sulle impostazioni del dispositivo stesso.
+
+![alt text](https://github.com/lorenzocastorina/washop/blob/master/screenshots/white.png?raw=true)
 
 ![alt text](https://github.com/lorenzocastorina/washop/blob/master/screenshots/other.png?raw=true)
 
