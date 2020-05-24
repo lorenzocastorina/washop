@@ -39,3 +39,12 @@ ng serve
 ```
 
 Una volta fatto il progetto partirà e sarà possibile visualizzarlo all'indirizzo [localhost:8080](http://localhost:8080/)
+
+
+potrebbe essere possibile dover utilizzare tale comando in caso di errore:
+
+`npm i @angular-devkit/build-angular@0.803.24`
+
+o
+
+`npm install --save-dev @angular-devkit/build-angular`
