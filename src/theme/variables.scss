@@ -227,3 +227,15 @@
     --color: white;
   }
 }
+
+@font-face {
+  font-family: 'Stratos Deliveroo Web';
+  src: url('StratosDeliverooWeb-SemiBold.woff2') format('woff2'),
+      url('StratosDeliverooWeb-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+.stratos {
+  font-family: 'Stratos Deliveroo Web';
+}

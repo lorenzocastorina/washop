@@ -1,3 +1,10 @@
 ion-content ion-toolbar {
   --background: translucent;
 }
+
+.itemBadge {
+  z-index: 10;
+  top: 0;
+  right: 0;
+  position: absolute;
+}

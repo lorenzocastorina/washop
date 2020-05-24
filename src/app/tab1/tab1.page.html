@@ -1,17 +1,72 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      <span class="stratos">Washop</span>
+     
     </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button *ngIf="user" (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large"><span class="stratos">Washop</span></ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-grid>
+
+    <ion-row>
+      <ion-col>
+        <ion-buttons class="scrollable">
+          <ion-button color="dark" *ngFor="let category of categories" (click)="getProductsByCategory(category)">
+            <span class="stratos">{{ category }}</span>
+          </ion-button>
+        </ion-buttons>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let product of filteredProducts">
+            <ion-avatar slot="start" (click)="showInfo(product)">
+              <img *ngIf="product.pic != '/images/big/missing.png'" [src]="'https://zerottanta.com' + product.pic" alt="">
+            </ion-avatar>
+            <ion-label (click)="showInfo(product)">
+              <h2>
+                {{ product.title }}
+              </h2>
+            </ion-label>
+            <ion-button [disabled]="product.purchasable_item.price === null" (click)="addItemToCart(product)" set="end">
+              {{ product.purchasable_item.price ? product.purchasable_item.price + " €" : "non disponibile"}} 
+            </ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div class="spacer">
+
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-fab class="back" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-badge *ngIf="counter != 0" class="itemBadge" color="danger">{{ counter }}</ion-badge>
+    <ion-fab-button (click)="showCart()">
+      <ion-icon name="cart-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>

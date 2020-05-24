@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><span class="stratos">Dettagli</span></ion-title>
+    <ion-buttons slot="end" color="dark">
+      <ion-button fill="clear" (click)="close()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <img class="immagine" *ngIf="product.pic != '/images/big/missing.png'" alt="" [src]="'https://zerottanta.com' + product.pic">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-title>
+          <h2><span class="stratos">{{ product.title }}</span></h2>
+        </ion-title>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text>
+          <div class="infoGroup">
+            <p class="sottotitolo">{{ product.subtitle }}&nbsp; &nbsp;</p>
+            <p class="prezzo"> € {{ product.purchasable_item.price }}</p>
+          </div>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row class="operazioni">
+      <ion-col size="5" class="bottone"> 
+        <ion-button color="light" (click)="rimuovi()">
+          <ion-icon name="remove-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="2">
+        <p class="contatore">{{ contatore }}</p>
+      </ion-col>
+      <ion-col size="5">
+        <ion-button color="light" (click)="aggiungi()">
+          <ion-icon name="add-circle-outline" ></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button class="operazioni" expand="full" (click)="addToCart()">
+          Aggiungi
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><span class="stratos">Checkout</span></ion-title>
+    <ion-buttons slot="end" color="dark">
+      <ion-button fill="clear" (click)="close()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <lottie-animation-view
+  [options]="lottieConfig"
+  [width]="300"
+  [height]="600"
+  >
+</lottie-animation-view> -->
+  
+        <ion-list>
+          <ion-list-header>
+            <span class="stratos">Nel carrello</span>
+          </ion-list-header>
+
+          <ion-item-sliding *ngFor="let item of cart">
+
+          <ion-item >
+            <ion-avatar slot="start">
+              <img *ngIf="item.pic != '/images/big/missing.png'" [src]="'https://zerottanta.com' + item.pic" alt="">
+            </ion-avatar>
+            <ion-label>
+              <h2>
+                {{ item.title }}
+              </h2>
+              <ion-label color="medium" class="product">
+                <div class="buttons">
+                  <ion-icon class="m5w" name="add-outline" (click)="add(item)"></ion-icon> 
+                  <ion-icon class="m5w" name="remove-outline" (click)="remove(item)"></ion-icon>
+                  <!-- <ion-icon class="m5w" name="trash-outline" (click)="delete(item)"></ion-icon> -->
+                  <ion-icon class="m5w" name="bookmark-outline" (click)="save(item)"></ion-icon>
+                </div>
+              </ion-label>
+            </ion-label>
+
+              <div class="ion-text-end info">
+                <span class="stratos">{{ item.quantity }} pz</span>
+              </div>
+
+            <!-- <ion-label>     da dividere in colonne che staranno dentro una row che stara dentro un item
+              <div class="ion-text-end">
+                <span class="stratos">0 €</span>
+              </div>
+            </ion-label>  -->
+           
+          
+          </ion-item>
+
+          <ion-item-options side="end">
+            <ion-item-option (click)="delete(item)" color="danger"><ion-icon name="trash-outline"></ion-icon></ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+        </ion-list>
+        <ion-list>
+          <ion-list-header>
+            <span class="stratos spacer">Salvati per dopo</span>
+          </ion-list-header>
+
+          
+
+          <ion-item *ngFor="let item of salvatiPerDopo">
+            <ion-avatar slot="start">
+              <img *ngIf="item.pic != '/images/big/missing.png'" [src]="'https://zerottanta.com' + item.pic" alt="">
+            </ion-avatar>
+            <ion-label>
+              <h2>
+                {{ item.title }}
+              </h2>
+              <ion-label color="medium">
+                <div class="buttons">
+                  <ion-icon class="m5w" name="add-outline" (click)="addFromSave(item)"></ion-icon> 
+                  <ion-icon class="m5w" name="remove-outline" (click)="removeFromSave(item)"></ion-icon>
+                  <ion-icon class="m5w" name="trash-outline" (click)="deleteFromSave(item)"></ion-icon>
+                  <ion-icon class="m5w" name="arrow-up-outline" (click)="addToCart(item)"></ion-icon>
+                </div>
+              </ion-label>
+            </ion-label>
+            <ion-label color="medium">
+              <div class="ion-text-end">
+                <span class="stratos">{{ item.quantity }} pz</span>
+              </div>
+            </ion-label>
+            <!-- <ion-label>     da dividere in colonne che staranno dentro una row che stara dentro un item
+              <div class="ion-text-end">
+                <span class="stratos">0 €</span>
+              </div>
+            </ion-label>  -->
+          </ion-item>
+
+        </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="full">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="ion-text-start">
+            <ion-text color="medium"><span class="stratos">{{ counter }}</span></ion-text>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="ion-text-center">
+            <span class="stratos">{{ total | number: '.1-2'}} €</span>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="ion-text-end">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-button>
+</ion-footer>

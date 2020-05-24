@@ -1,0 +1,39 @@
+.immagine {
+    width: 100vw;
+    height: 100vw;
+}
+
+.sottotitolo {
+    display: inline-block;
+    font-weight: 500;
+}
+
+.prezzo {
+    display: inline-block;
+    color: grey;
+}
+
+.contatore {
+    text-align: center;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.infoGroup {
+    display: inline-block;
+    margin-left: 5vw !important;
+    
+}
+
+.bottone {
+    text-align: right;
+}
+
+.contatore {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.operazioni {
+    margin-top: 20px !important;
+}
